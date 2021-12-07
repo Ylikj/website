@@ -14,8 +14,8 @@ type Props = {
 
 const Features: NextPage<Props, any> = ({ t, list = [] }) => {
   const [currentHeight, setCurrentHeight] = useState(0);
-  const [menuHeight, setBackgroundHeight] = useState(0);
-  const [navHeight, setNavHeight] = useState(23);
+  const [menuHeight, setBackgroundHeight] = useState(26);
+  const [navHeight, setNavHeight] = useState(72);
   let arr = [];
   if (typeof window !== 'undefined') {
     const sectionBoxArr = document.querySelectorAll('.sectionBox');
