@@ -14,7 +14,7 @@ type Props = {
 
 const Features: NextPage<Props, any> = ({ t, list = [] }) => {
   const [currentHeight, setCurrentHeight] = useState(0);
-  const [menuHeight, setBackgroundHeight] = useState(26);
+  const [menuHeight, setMenuHeight] = useState(26);
   const [navHeight, setNavHeight] = useState(72);
   let arr = [];
   if (typeof window !== 'undefined') {
@@ -29,7 +29,7 @@ const Features: NextPage<Props, any> = ({ t, list = [] }) => {
       setCurrentHeight(document.documentElement.scrollTop);
     });
     window.addEventListener("resize", function () {
-      setBackgroundHeight(document.getElementsByClassName("height")[0].clientHeight);
+      setMenuHeight(document.getElementsByClassName("height")[0].clientHeight);
       setNavHeight(document.getElementsByClassName("css-o7dev2")[0].clientHeight);
     });
     autoMenuSelected();
@@ -71,7 +71,7 @@ const Features: NextPage<Props, any> = ({ t, list = [] }) => {
           <h1>API7 功能特性</h1>
           <p>API7 为您提供生产可用的七层全流量处理平台</p>
         </div>
-        <SMenu className={'height'} style={{ 'top': 300 + navHeight - menuHeight }}>
+        <SMenu className='height' style={{ 'top': 300 + navHeight - menuHeight }}>
           <ul className={currentHeight > 320 && "newmenu"}>
             {list.map((item, index) => {
               return (
