@@ -25,12 +25,16 @@ const Features: NextPage<Props, any> = ({ t, list = [] }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setCurrentHeight(document.documentElement.scrollTop);
-    });
+    window.onload = () => {
+      setMenuHeight(document.getElementsByClassName("height")[0].clientHeight);
+      setNavHeight(document.getElementsByClassName("css-o7dev2")[0].clientHeight);
+    }
     window.addEventListener("resize", function () {
       setMenuHeight(document.getElementsByClassName("height")[0].clientHeight);
       setNavHeight(document.getElementsByClassName("css-o7dev2")[0].clientHeight);
+    });
+    window.addEventListener("scroll", () => {
+      setCurrentHeight(document.documentElement.scrollTop);
     });
     autoMenuSelected();
   }, [currentHeight]);
