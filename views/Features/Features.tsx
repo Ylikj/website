@@ -117,7 +117,7 @@ Features.getInitialProps = async (context) => {
   const posts = features[lng];
 
   return {
-    namespacesRequired: ["common"],
+    namespacesRequired: ["common","features"],
     list: posts,
   };
 };
